@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    </head>
+    <body style="background-color: #161616; color: #e3e3e3;"> 
+        <h1>
+            Il fait - <span id="temp"></span><div class="br"></div>
+            Nous sommes à <span id="lieu"></span><div class="br"></div>
+            Latitude <span id="lat"></span><div class="br"></div>
+        </h1>
+        <div id="content">
+            <script type="text/javascript">
+                var lat=43;
+                var lon=1.4;
+                if (navigator.geolocation) {
+                    console.log("Geolocalisation supported");
+                    navigator.geolocation.getCurrentPosition(function(position){
+                        console.log(position);
+                        lat=position.coords.latitude;
+                        console.log('in function: ' + lat);
+                        document.getElementById("lat").innerHTML=position.coords.latitude;
+                    });
+                }
+                else {
+                    console.log("Geolocalisation not supported");
+                }
+                console.log('mid: '+lat);
+
+                window.fetch('https://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+'&appid=36f1eed3b21b3aff408024d7579376b2&units=metric')
+                  .then(res => res.json())
+                  .then(function(resJson){
+                      document.getElementById("temp").innerHTML=resJson.main.temp;
+                      document.getElementById("lieu").innerHTML=resJson.name;
+                  })
+            </script>
+        </div>
+    </body>
+</html>
