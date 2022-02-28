@@ -82,7 +82,7 @@ tomorrow.addEventListener('click', function() { //pas finis
                 console.log("tomorrow");
                 console.log(yesterdayTimestamp);
                 console.log(resJson);
-                temperature = resJson.current.temp;
+                temperature = resJson.list[8].main.temp;
                 document.getElementById("temp").innerHTML = temperature;
             })
     }) //*/
