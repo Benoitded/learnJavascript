@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link href="weatherPage.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <section>
+        <div class="app">
+            <div>
+                <h1 class="gm">gm.</h1>
+            </div>
+            <div class="middle">
+                <div class="sun"><img class="imgSun" src="sun.png"></div>
+                <div class="temperature"><span id="temp"></span>°C</div>
+                <div class="location"><span type="button" class="btn-appear" id="lieu"></span></div>
+            </div>
+            <div class="dates">
+                <input type="button" value="Yesterday" class="btn-date" id="yesterday">
+                <input type="button" value="Today" class="btn-date" id="today">
+                <input type="button" value="Tomorrow" class="btn-date" id="tomorrow">
+            </div>
+        </div>
+        <div class="lieu_section">
+            <div class="lieu_app">
+                <div class="croix">x</div>
+                <input id="idPlace" placeholder="Which city?">
+                <input type="button" value="Rechercher" class="btn-search" id="buttonC">
+            </div>
+        </div>
+        <div class="signature">
+            Made with ♥️ by Benoitded. 2022.
+        </div>
+    </section>
+
+    <script src="index-jquery.js"></script>
+</body>
+
+</html>

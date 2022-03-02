@@ -1,0 +1,183 @@
+body {
+    background-color: #161616;
+    color: #e4e7eb;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+section {
+    display: flex;
+    height: 95vh;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.app {
+    background-color: rgba(255, 255, 255, 0.06);
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    max-height: 75vh;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gm {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    right: auto;
+    bottom: 0%;
+    margin-top: 20px;
+    margin-left: 20px;
+    color: #e4e7eb;
+    font-size: 40px;
+    line-height: 1.1;
+    padding: 20px;
+}
+
+.middle {
+    width: 33%;
+}
+
+.sun {
+    width: 100%;
+}
+
+.imgSun {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.temperature {
+    font-size: 40px;
+    line-height: 1.1;
+    margin-top: 20px;
+}
+
+.location {
+    font-size: 18px;
+    line-height: 1.1;
+    text-align: right;
+    margin-top: 8px;
+}
+
+.dates {
+    position: absolute;
+    left: 0%;
+    top: auto;
+    right: 0%;
+    bottom: 0%;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-date {
+    padding: 5px 10px;
+    justify-content: center;
+    color: #838383;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+}
+
+.btn-date:hover {
+    padding: 5px 10px;
+    justify-content: center;
+    color: #e4e7eb;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.btn-date:active {
+    transform: translate(0px, 2px);
+}
+
+.signature {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: absolute;
+    left: 0%;
+    top: auto;
+    right: 0%;
+    bottom: 0%;
+    padding: 10px;
+    text-align: right;
+    color: #858585;
+    font-size: 14px;
+    line-height: 1.1;
+}
+
+.lieu_section.hide {
+    display: none;
+}
+
+.lieu_section.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lieu_section {
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    font-size: 14px;
+    line-height: 1.1;
+    z-index: 10;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.lieu_app {
+    background-color: #272727;
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    max-height: 75vh;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.croix {
+    padding: 15px;
+    z-index: 12;
+    float: right;
+    position: absolute;
+    left: auto;
+    top: 0%;
+    right: 0%;
+    bottom: auto;
+    cursor: default;
+}
+
+.croix:hover {
+    justify-content: center;
+    color: #646464;
+    font-weight: bold;
+}
+
+.croix:active {
+    transform: translate(0px, 2px);
+}
+
+.idPlace {
+    background-color: #838383;
+}
