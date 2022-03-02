@@ -23,6 +23,17 @@ $(document).ready(function() {
         });
     }
 
+
+    $(".btn-appear").on("click", function() { //Affiche le menu pour changer de ville
+        console.log('clic');
+        $(".lieu_section").addClass("show");
+    })
+
+    $(".croix").on("click", function(e) { //Supprime le menu pour changer de ville
+        console.log(e.target);
+        $(".lieu_section").removeClass("show")
+    })
+
     $(".btn-search").on("click", function() {
 
         window.fetch('https://api.openweathermap.org/data/2.5/weather?q=' + $("#idPlace").val() + '&appid=36f1eed3b21b3aff408024d7579376b2&units=metric')
