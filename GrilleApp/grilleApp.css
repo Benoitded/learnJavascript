@@ -1,0 +1,59 @@
+body {
+    background-color: #161616;
+    color: #e3e3e3;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    background-color: #242424;
+    border-radius: 20px;
+}
+
+.grid_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+.grid_item {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #242424;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.grid_item:hover {
+    background-color: #1f1f1f;
+    border: #242424;
+    border-width: 7px;
+    border-style: solid;
+}
+
+.grid_proprietes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+}
+
+.propriete {
+    background-color: rgb(53, 53, 53);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.photo_animal {
+    padding: 5px 10px;
+}
+
+.nom_item {
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+}
