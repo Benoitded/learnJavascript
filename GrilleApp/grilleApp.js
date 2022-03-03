@@ -1,47 +1,27 @@
 $(document).ready(function() {
-    //$(".grid_item").css("border", "3px solid red");
     let id = "nothing";
     let oldId = "nothing";
-
-
+    //$(".grid_item").hide();
+    //let memButton = { avecQueue = false, sansQueue = false, pattes4 = false, pattes6 = false, pattes8 = false, poilsLong = false, poilsCourt = false, poilsSans = false, age2 = false, age9 = false, age13 = false, age15 = false, age60 = false, couleurBeige = false, couleurNoire = false, couleurViolet = false, couleurMarron = false, couleurGris = false };
+    //$("[couleur='couleurNoire'], [age='age2']").show();
     $(".btn-filtre").on("click", function() {
         id = $(this).attr("id");
         console.log(id);
+        $("[id='" + oldId + "']").removeClass("underline");
+        $("[id='" + id + "']").addClass("underline");
         if (id != oldId) {
+            $(".grid_item").hide();
+            $("[" + $(this).attr("type") + "='" + id + "']").show(); //ex : [age='age2']
 
-            if ($(this).attr("type") == "queue") {
-                console.log("[queue='" + id + "']");
-                $(".grid_item").hide();
-                $("[queue='" + id + "']").show();
-            }
-
-            if ($(this).attr("type") == "pattes") {
-                console.log("[nbPattes='" + id + "']");
-                $(".grid_item").hide();
-                $("[nbPattes='" + id + "']").show();
-            }
-
-            if ($(this).attr("type") == "poils") {
-                console.log("[poils='" + id + "']");
-                $(".grid_item").hide();
-                $("[poils='" + id + "']").show();
-            }
-
-            if ($(this).attr("type") == "age") {
-                console.log("[age='" + id + "']");
-                $(".grid_item").hide();
-                $("[age='" + id + "']").show();
-            }
-
-            if ($(this).attr("type") == "couleur") {
-                console.log("[couleur='" + id + "']");
-                $(".grid_item").hide();
-                $("[couleur='" + id + "']").show();
-            }
         } else {
-            console.log("reset");
             $(".grid_item").show();
+            $("[id='" + id + "']").removeClass("underline");
         }
         oldId = id;
     });
+
+    $(".btn-question").on("click", function() {
+        console.log("Salut");
+        $(".show-hide-filtre").toggle();
+    })
 });
