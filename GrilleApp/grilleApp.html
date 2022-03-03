@@ -10,119 +10,118 @@
 </head>
 
 <body>
-    <section class="header">
-        <h1>GrilleApp</h1>
-    </section>
-    <section class="corps">
-        <div class="sct-filtre">
-            <h3>Filtre</h3>
-            <div class="show-hide-filtre">
-                <div class="filtre">
-                    <div class="question">Queue</div>
-                    <button type="queue" class="btn-filtre" id="avecQueue">Avec</button>
-                    <button type="queue" class="btn-filtre" id="sansQueue">Sans</button>
+    <section>
+        <div class="tout">
+            <div class="header">grilleApp</div>
+            <div class="corps">
+                <div class="filtres">
+                    <button type="queue" class="btn-question">Filtres</button>
+                    <div class="show-hide-filtre">
+                        <div class="filtre">
+                            <div class="question">Queue</div>
+                            <button type="queue" class="btn-filtre" id="avecQueue">Avec</button>
+                            <button type="queue" class="btn-filtre" id="sansQueue">Sans</button>
+                        </div>
+                        <div class="filtre">
+                            <div class="question">Pattes</div>
+                            <button type="pattes" class="btn-filtre" id="pattes4">4</button>
+                            <button type="pattes" class="btn-filtre" id="pattes6">6</button>
+                            <button type="pattes" class="btn-filtre" id="pattes8">8</button>
+                        </div>
+                        <div class="filtre">
+                            <div class="question">Poils</div>
+                            <button type="poils" class="btn-filtre" id="poilsLong">Long</button>
+                            <button type="poils" class="btn-filtre" id="poilsCourt">Court</button>
+                            <button type="poils" class="btn-filtre" id="poilsSans">Sans</button>
+                        </div>
+                        <div class="filtre">
+                            <div class="question">Age</div>
+                            <button type="age" class="btn-filtre" id="age2">2</button>
+                            <button type="age" class="btn-filtre" id="age9">9</button>
+                            <button type="age" class="btn-filtre" id="age13">13</button>
+                            <button type="age" class="btn-filtre" id="age15">15</button>
+                            <button type="age" class="btn-filtre" id="age60">60</button>
+                        </div>
+                        <div class="filtre">
+                            <div class="question">Couleur</div>
+                            <button type="couleur" class="btn-filtre" id="couleurBeige">Beige</button>
+                            <button type="couleur" class="btn-filtre" id="couleurNoire">Noire</button>
+                            <button type="couleur" class="btn-filtre" id="couleurViolet">Violet</button>
+                            <button type="couleur" class="btn-filtre" id="couleurMarron">Marron</button>
+                            <button type="couleur" class="btn-filtre" id="couleurGris">Gris</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="filtre">
-                    <div class="question">Pattes</div>
-                    <button type="pattes" class="btn-filtre" id="pattes4">4</button>
-                    <button type="pattes" class="btn-filtre" id="pattes6">6</button>
-                    <button type="pattes" class="btn-filtre" id="pattes8">8</button>
-                </div>
-                <div class="filtre">
-                    <div class="question">Poils</div>
-                    <button type="poils" class="btn-filtre" id="poilsLong">Long</button>
-                    <button type="poils" class="btn-filtre" id="poilsCourt">Court</button>
-                    <button type="poils" class="btn-filtre" id="poilsSans">Sans</button>
-                </div>
-                <div class="filtre">
-                    <div class="question">Age</div>
-                    <button type="age" class="btn-filtre" id="age2">2</button>
-                    <button type="age" class="btn-filtre" id="age9">9</button>
-                    <button type="age" class="btn-filtre" id="age13">13</button>
-                    <button type="age" class="btn-filtre" id="age15">15</button>
-                    <button type="age" class="btn-filtre" id="age60">60</button>
-                </div>
-                <div class="filtre">
-                    <div class="question">Couleur</div>
-                    <button type="couleur" class="btn-filtre" id="couleurBeige">Beige</button>
-                    <button type="couleur" class="btn-filtre" id="couleurNoire">Noire</button>
-                    <button type="couleur" class="btn-filtre" id="couleurViolet">Violet</button>
-                    <button type="couleur" class="btn-filtre" id="couleurMarron">Marron</button>
-                    <button type="couleur" class="btn-filtre" id="couleurGris">Gris</button>
+                <div class="animaux">
+                    <div class="grid_item" queue="avecQueue" nbPattes="pattes4" poils="poilsCourt" age="age13" couleur="couleurBeige">
+                        <img class="photo_animal" src="photos/yeezy_wink.jpg" alt="Bg">
+                        <div class="nom_item">Chien</div>
+                        <div class="grid_proprietes">
+                            <div class="propriete">Avec queue</div>
+                            <div class="propriete">4</div>
+                            <div class="propriete">Court</div>
+                            <div class="propriete">13 ans</div>
+                            <div class="propriete">Beige</div>
+                        </div>
+                    </div>
+                    <div class="grid_item" queue="avecQueue" pattes="pattes4" poils="poilsCourt" age="age15" couleur="couleurNoire">
+                        <img class="photo_animal" src="photos/chat.jpg" alt="Bg">
+                        <div class="nom_item">Chat</div>
+                        <div class="grid_proprietes">
+                            <div class="propriete">Avec queue</div>
+                            <div class="propriete">4 pattes</div>
+                            <div class="propriete">Court</div>
+                            <div class="propriete">15 ans</div>
+                            <div class="propriete">Noire</div>
+                        </div>
+                    </div>
+                    <div class="grid_item" queue="sansQueue" pattes="pattes6" poils="poilsCourt" age="age2" couleur="couleurNoire">
+                        <img class="photo_animal" src="photos/araignée.jpg" alt="Bg">
+                        <div class="nom_item">Araignée</div>
+                        <div class="grid_proprietes">
+                            <div class="propriete">Sans queue</div>
+                            <div class="propriete">4 pattes</div>
+                            <div class="propriete">Court</div>
+                            <div class="propriete">2 ans</div>
+                            <div class="propriete">Noire</div>
+                        </div>
+                    </div>
+                    <div class="grid_item" queue="sansQueue" pattes="pattes8" poils="poilsSans" age="age2" couleur="couleurViolet">
+                        <img class="photo_animal" src="photos/poulpe.jpg" alt="Bg">
+                        <div class="nom_item">Poulpe</div>
+                        <div class="grid_proprietes">
+                            <div class="propriete">Sans queue</div>
+                            <div class="propriete">8 pattes</div>
+                            <div class="propriete">Sans poils</div>
+                            <div class="propriete">2 ans</div>
+                            <div class="propriete">Violet</div>
+                        </div>
+                    </div>
+                    <div class="grid_item" queue="avecQueue" pattes="pattes4" poils="poilsLong" age="age60" couleur="couleurMarron">
+                        <img class="photo_animal" src="photos/mamouth.jpg" alt="Bg">
+                        <div class="nom_item">Mamouth</div>
+                        <div class="grid_proprietes">
+                            <div class="propriete">Avec queue</div>
+                            <div class="propriete">4 pattes</div>
+                            <div class="propriete">Longs</div>
+                            <div class="propriete">60 ans</div>
+                            <div class="propriete">Marron</div>
+                        </div>
+                    </div>
+                    <div class="grid_item" queue="avecQueue" pattes="pattes4" poils="poilsCourt" age="age9" couleur="couleurGris">
+                        <img class="photo_animal" src="photos/rabbit.jpg" alt="Bg">
+                        <div class="nom_item">Lapin</div>
+                        <div class="grid_proprietes">
+                            <div class="propriete">Avec queue</div>
+                            <div class="propriete">4 pattes</div>
+                            <div class="propriete">Court</div>
+                            <div class="propriete">9 ans</div>
+                            <div class="propriete">Gris</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="grid_container">
-            <div class="grid_item" queue="avecQueue" nbPattes="pattes4" poils="poilsCourt" age="age13" couleur="couleurBeige">
-                <img class="photo_animal" src="photos/yeezy_wink.jpg" alt="Bg">
-                <div class="nom_item">Chien</div>
-                <div class="grid_proprietes">
-                    <div class="propriete">Avec queue</div>
-                    <div class="propriete">4</div>
-                    <div class="propriete">Court</div>
-                    <div class="propriete">13 ans</div>
-                    <div class="propriete">Beige</div>
-                </div>
-            </div>
-            <div class="grid_item" queue="avecQueue" nbPattes="pattes4" poils="poilsCourt" age="age15" couleur="couleurNoire">
-                <img class="photo_animal" src="photos/chat.jpg" alt="Bg">
-                <div class="nom_item">Chat</div>
-                <div class="grid_proprietes">
-                    <div class="propriete">Avec queue</div>
-                    <div class="propriete">4 pattes</div>
-                    <div class="propriete">Court</div>
-                    <div class="propriete">15 ans</div>
-                    <div class="propriete">Noire</div>
-                </div>
-            </div>
-            <div class="grid_item" queue="sansQueue" nbPattes="pattes6" poils="poilsCourt" age="age2" couleur="couleurNoire">
-                <img class="photo_animal" src="photos/araignée.jpg" alt="Bg">
-                <div class="nom_item">Araignée</div>
-                <div class="grid_proprietes">
-                    <div class="propriete">Sans queue</div>
-                    <div class="propriete">4 pattes</div>
-                    <div class="propriete">Court</div>
-                    <div class="propriete">2 ans</div>
-                    <div class="propriete">Noire</div>
-                </div>
-            </div>
-            <div class="grid_item" queue="sansQueue" nbPattes="pattes8" poils="poilsSans" age="age2" couleur="couleurViolet">
-                <img class="photo_animal" src="photos/poulpe.jpg" alt="Bg">
-                <div class="nom_item">Poulpe</div>
-                <div class="grid_proprietes">
-                    <div class="propriete">Sans queue</div>
-                    <div class="propriete">8 pattes</div>
-                    <div class="propriete">Sans poils</div>
-                    <div class="propriete">2 ans</div>
-                    <div class="propriete">Violet</div>
-                </div>
-            </div>
-            <div class="grid_item" queue="avecQueue" nbPattes="pattes4" poils="poilsLong" age="age60" couleur="couleurMarron">
-                <img class="photo_animal" src="photos/mamouth.jpg" alt="Bg">
-                <div class="nom_item">Mamouth</div>
-                <div class="grid_proprietes">
-                    <div class="propriete">Avec queue</div>
-                    <div class="propriete">4 pattes</div>
-                    <div class="propriete">Longs</div>
-                    <div class="propriete">60 ans</div>
-                    <div class="propriete">Marron</div>
-                </div>
-            </div>
-            <div class="grid_item" queue="avecQueue" nbPattes="pattes4" poils="poilsCourt" age="age9" couleur="couleurGris">
-                <img class="photo_animal" src="photos/rabbit.jpg" alt="Bg">
-                <div class="nom_item">Lapin</div>
-                <div class="grid_proprietes">
-                    <div class="propriete">avecQueue queue</div>
-                    <div class="propriete">4 pattes</div>
-                    <div class="propriete">Court</div>
-                    <div class="propriete">9 ans</div>
-                    <div class="propriete">Gris</div>
-                </div>
-            </div>
-        </div>
     </section>
-    <!--script src="index.js"></script-->
     <script src="grilleApp.js"></script>
 </body>
-
-</html>
