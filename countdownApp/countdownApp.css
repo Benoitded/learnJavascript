@@ -13,31 +13,70 @@ body {
 }
 
 .main-div {
-    height: 300px;
+    height: 200px;
     width: 700px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
     background-color: #242424;
     border-radius: 20px;
+    padding: 30px;
+    position: relative;
 }
 
 .div-date {
-    padding: 20px;
-    height: 100%;
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: left;
-    align-items: stretch;
-    font-weight: bold;
-    font-size: 300%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
 }
 
-.date {
-    border-radius: 20px;
-    height: 100px;
-    display: flex;
-    align-items: center;
+.div-date.up {
+    font-size: 110px;
+    font-weight: bold;
+}
+
+.div-date.down {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.change {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    color: #525252;
+    font-size: 10px;
+}
+
+.change:hover {
+    text-decoration: underline;
+    color: #787878;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.change:active {
+    transform: translate(0px, 2px);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 5px;
+    color: #2e2e2e;
+}
+
+.benoitded {
+    color: #535353;
+}
+
+.benoitded:active {
+    transform: translate(0px, 2px);
 }
