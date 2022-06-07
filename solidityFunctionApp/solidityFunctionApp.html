@@ -4,21 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
-    <title>default</title>
+    <title>solidityFunctionApp</title>
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
-    <link href="default.css" rel="stylesheet" type="text/css">
+    <link href="solidityFunctionApp.css" rel="stylesheet" type="text/css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
+
     <section class="main-section">
         <div class="main-div">
+            <div class="question-line">Want to write a function in Solidity?</div>
+            <div class="selection-line">
+                <!--Comment:
+                - _ for internal and private functions-->
+                <div class="selection-div" id="nameFunction">
+                    <div class="title-selection-div">Name.</div>
+                    <input type="text" id="input-name" name="firstname" value="nameOfYourFunction">
+                </div>
+                <div class="selection-div" id="parameter">
+                    <div class="title-selection-div">Parameters.</div>
+                    <input type="text" id="param1" placeholder="int param1">
+                    <input type="text" id="param2" placeholder="int param2">
+                    <input type="text" id="param3" placeholder="int param3">
+                </div>
+                <div class="selection-div" id="visibility">
+                    <div class="title-selection-div">Visibility.</div>
+                    <button class="visibility-btn" id="internal">Internal</button>
+                    <button class="visibility-btn" id="external">External</button>
+                    <button class="visibility-btn" id="private">Private</button>
+                    <button class="visibility-btn" id="public">Public</button>
+                </div>
+                <div class="selection-div" id="mutability">
+                    <div class="title-selection-div">Mutability.</div>
+                    <button class="mutability-btn internal">Pure</button>
+                    <button class="mutability-btn internal">View</button>
+                    <button class="mutability-btn internal">Payable</button>
+                </div>
+                <div class="selection-div" id="return">
+                    <div class="title-selection-div">Returns.</div>
+                    <input type="text" id="returns1" placeholder="int returns1">
+                    <input type="text" id="returns2" placeholder="int returns2">
+                    <input type="text" id="returns3" placeholder="int returns3">
+                </div>
+            </div>
+            <div class="answer-line">
+                <span class="answer-return" style="width: 100%; margin-right: 10px;" value="function _generateRandomDna(string memory _str) private view returns (uint) {}" id="myInput">nnn</span>
+                <button class="answer-copy-btn" onclick="myFunction()">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20"><path fill="currentColor" d="M8 3a1 1 0 0 0-1 1v.5a.5.5 0 0 1-1 0V4a2 2 0 0 1 2-2h.5a.5.5 0 0 1 0 1H8Zm-1 9a1 1 0 0 0 1 1h.5a.5.5 0 0 1 0 1H8a2 2 0 0 1-2-2v-.5a.5.5 0 0 1 1 0v.5Zm0-5.5a.5.5 0 0 0-1 0v3a.5.5 0 0 0 1 0v-3ZM16 3a1 1 0 0 1 1 1v.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2h-.5a.5.5 0 0 0 0 1h.5Zm0 10a1 1 0 0 0 1-1v-.5a.5.5 0 0 1 1 0v.5a2 2 0 0 1-2 2h-.5a.5.5 0 0 1 0-1h.5Zm1.5-7a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 1 0v-3a.5.5 0 0 0-.5-.5Zm-7-4a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3ZM10 13.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5ZM4 6h1v6.5A2.5 2.5 0 0 0 7.5 15H14v1a2 2 0 0 1-2 2H5.5A3.5 3.5 0 0 1 2 14.5V8a2 2 0 0 1 2-2Z"/></svg>
+                    <span class="tooltiptext-copy">Copy text.</span>
+                <span class="tooltiptext-copied">Text copied.</span>
+                </button>
+            </div>
         </div>
         <footer>Made with ❤ by <a class="benoitded" href="https://github.com/Benoitded" target="_blank">Benoitded</a></footer>
     </section>
 
-    <script src="default.js"></script>
+    <script src="solidityFunctionApp.js"></script>
 </body>
 
 </html>
