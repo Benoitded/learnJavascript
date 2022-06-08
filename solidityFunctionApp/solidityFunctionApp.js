@@ -16,10 +16,8 @@ function functionCopy() {
 
 function updateInfo() {
     console.log("Go in updateInfo()");
-    id = $(".visibility-btn").attr("id");
-    console.log("--> " + id);
     //Underscore
-    if (id == "internal" || id == "external") { underscore = "_"; } else { underscore = " " }
+    if (visibility == "internal" || visibility == "external") { underscore = "_"; } else { underscore = " " }
     //Name
     name = document.getElementById("input-name").value;
     //Parameters
@@ -29,7 +27,7 @@ function updateInfo() {
     parameters = param1;
     if (((param1 != "") && (param2 != "")) || ((param1 != "") && (param3 != ""))) parameters += ", ";
     if (param2 != "") parameters += param2;
-    if ((param2 != "") && (param3 != "")) parameters += "+ ";
+    if ((param2 != "") && (param3 != "")) parameters += ", ";
     if (param3 != "") parameters += param3;
     //Visibility
     if (visibility != "") visibility += " ";
@@ -43,9 +41,9 @@ function updateInfo() {
         returns = ""
     else {
         returns = returns1;
-        if (((returns1 != "") && (returns2 != "")) || ((returns1 != "") && (returns3 != ""))) parameters += ", ";
+        if (((returns1 != "") && (returns2 != "")) || ((returns1 != "") && (returns3 != ""))) returns += ", ";
         if (returns2 != "") returns += returns2;
-        if ((returns2 != "") && (returns3 != "")) parameters += "+ ";
+        if ((returns2 != "") && (returns3 != "")) returns += ", ";
         if (returns3 != "") returns += returns3;
         if (returns != "") returns = " returns (" + returns + ")";
     }
