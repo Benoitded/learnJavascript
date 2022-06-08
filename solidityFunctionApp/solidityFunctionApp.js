@@ -31,6 +31,7 @@ function updateInfo() {
     if (param3 != "") parameters += param3;
     //Visibility
     if (visibility != "") visibility += " ";
+
     //Mutability
     if (mutability != "") mutability += " ";
     //Returns
@@ -45,11 +46,11 @@ function updateInfo() {
         if (returns2 != "") returns += returns2;
         if ((returns2 != "") && (returns3 != "")) returns += ", ";
         if (returns3 != "") returns += returns3;
-        if (returns != "") returns = " returns (" + returns + ")";
+        if (returns != "") returns = " <span style='color: #dd4e01;'>returns</span> (<span style='color: #269000;'>" + returns + "</span>)";
     }
-    answer = underscore + name + " (" + parameters + ") " + visibility + mutability + returns + "{}";
-    console.log("++> " + answer);
-    $("#answerToCopy").text(answer);
+    answer = "<span style='color: #1f67db;'>function</span> <span style='color: #dd4e01;'>" + underscore + name + "</span> (<span style='color: #269000;'>" + parameters + "</span>) " + visibility + mutability + returns + "{}";
+    //console.log("++> " + answer);
+    $("#answerToCopy").html(answer);
 }
 
 $(document).ready(function() {
