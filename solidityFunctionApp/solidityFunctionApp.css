@@ -30,6 +30,10 @@ button {
     margin: 3px 0px;
 }
 
+button.none {
+    background-color: #535353;
+}
+
 button:hover {
     background-color: #161616;
     color: #e4e7eb;
@@ -44,7 +48,7 @@ button:active {
 }
 
 .main-div {
-    height: 350px;
+    height: 400px;
     width: 1000px;
     display: flex;
     flex-direction: column;
