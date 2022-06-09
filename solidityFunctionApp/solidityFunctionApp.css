@@ -86,7 +86,7 @@ button:active {
     align-items: stretch;
     justify-content: start;
     flex-direction: column;
-    width: 140px;
+    width: 120px;
     padding: 15px;
 }
 
@@ -144,6 +144,10 @@ footer {
     bottom: 100%;
     left: 50%;
     margin-left: -50px;
+}
+
+.inheriting-btn:hover .tooltiptext {
+    visibility: visible;
 }
 
 .visibility-btn:hover .tooltiptext {
