@@ -146,15 +146,7 @@ footer {
     margin-left: -50px;
 }
 
-.inheriting-btn:hover .tooltiptext {
-    visibility: visible;
-}
-
-.visibility-btn:hover .tooltiptext {
-    visibility: visible;
-}
-
-.mutability-btn:hover .tooltiptext {
+.b-btn:hover .tooltiptext {
     visibility: visible;
 }
 
