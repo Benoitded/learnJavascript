@@ -31,7 +31,7 @@ button {
     position: relative;
 }
 
-button.none {
+button.selected {
     background-color: #535353;
 }
 
@@ -49,7 +49,6 @@ button:active {
 }
 
 .main-div {
-    height: 400px;
     width: 1000px;
     display: flex;
     flex-direction: column;
@@ -86,7 +85,9 @@ button:active {
     align-items: stretch;
     justify-content: start;
     flex-direction: column;
-    width: 120px;
+    width: 100%;
+    min-width: 100px;
+    margin: 0px 5px;
     padding: 15px;
 }
 

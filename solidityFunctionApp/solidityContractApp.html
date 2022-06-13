@@ -12,7 +12,6 @@
 </head>
 
 <body>
-
     <section class="main-section">
         <div class="main-div">
             <div class="question-line">Want to make a contract in Solidity?</div>
@@ -20,92 +19,64 @@
                 <!--Comment:
                 - _ for internal and private functions-->
                 <div class="selection-div" id="nameFunction">
-                    <div class="title-selection-div">Name.</div>
-                    <input type="text" id="input-name" name="firstname" value="nameOfYourFunction" autofocus onfocus="this.selectionStart = this.selectionEnd = this.value.length;">
-                </div>
-                <div class="selection-div" id="parameter">
-                    <div class="title-selection-div">Parameters.</div>
-                    <input type="text" id="param1" placeholder="int param1">
-                    <input type="text" id="param2" placeholder="int param2">
-                    <input type="text" id="param3" placeholder="int param3">
-                </div>
-                <div class="selection-div" id="inheriting">
-                    <div class="title-selection-div">Inheriting.</div>
-                    <button class="b-btn" id="virtual">
-                        Virtual
-                        <span class="tooltiptext">
-                            A function that allows an inheriting contract to override its behavior will be marked at virtual.
-                        </span>
-                    </button>
-                    <button class="b-btn" id="override">
-                        Override
-                        <span class="tooltiptext">
-                            The function that overrides that base function is marked as override.
-                        </span>
-                    </button>
-                    <button class="b-btn none" id="">None</button>
-                </div>
-                <div class="selection-div" id="visibility">
-                    <div class="title-selection-div">Visibility.</div>
-                    <button class="b-btn" id="internal">
-                        Internal
+                    <div class="title-selection-div">Version.</div>
+                    <button class="c-btn selected" id="old">
+                        &#62;0.5.0 &#60;=0.5.0
                         <span class="tooltiptext">
                             Internal functions and state variables can only be accessed internally (i.e. from within the current contract or contracts deriving from it), without using this.
                         </span>
                     </button>
-                    <button class="b-btn" id="external">
-                        External
+                    <button class="c-btn" id="new">
+                        ^0.6.7
                         <span class="tooltiptext">
-                            External functions are part of the contract interface, which means they can be called from other contracts and via transactions.
+                            Internal functions and state variables can only be accessed internally (i.e. from within the current contract or contracts deriving from it), without using this.
                         </span>
                     </button>
-                    <button class="b-btn" id="private">
-                        Private
-                        <span class="tooltiptext">
-                            Private functions and state variables are only visible for the contract they are defined in and not in derived contracts.
-                        </span>
-                    </button>
-                    <button class="b-btn" id="public">
-                        Public
-                        <span class="tooltiptext">
-                            Public functions are part of the contract interface and can be either called internally or via messages. For public state variables, an automatic getter function is generated.
-                        </span>
-                    </button>
-                    <button class="b-btn none" id="">None</button>
+                    <input type="text" id="pragma-name" name="firstname" value=">=0.5.0 <0.6.0">
+                </div>
+                <div class="selection-div" id="import">
+                    <div class="title-selection-div">Import.</div>
+                    <div class="import-line">
+                        <input type="text" id="import1" value="./" placeholder="zombieattack">
+                        <button class="answer-copy-btn" onclick="functionCopy('contractToCopy')">
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20"><path fill="currentColor" d="M8 3a1 1 0 0 0-1 1v.5a.5.5 0 0 1-1 0V4a2 2 0 0 1 2-2h.5a.5.5 0 0 1 0 1H8Zm-1 9a1 1 0 0 0 1 1h.5a.5.5 0 0 1 0 1H8a2 2 0 0 1-2-2v-.5a.5.5 0 0 1 1 0v.5Zm0-5.5a.5.5 0 0 0-1 0v3a.5.5 0 0 0 1 0v-3ZM16 3a1 1 0 0 1 1 1v.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2h-.5a.5.5 0 0 0 0 1h.5Zm0 10a1 1 0 0 0 1-1v-.5a.5.5 0 0 1 1 0v.5a2 2 0 0 1-2 2h-.5a.5.5 0 0 1 0-1h.5Zm1.5-7a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 1 0v-3a.5.5 0 0 0-.5-.5Zm-7-4a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3ZM10 13.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5ZM4 6h1v6.5A2.5 2.5 0 0 0 7.5 15H14v1a2 2 0 0 1-2 2H5.5A3.5 3.5 0 0 1 2 14.5V8a2 2 0 0 1 2-2Z"/></svg>
+                            <span class="tooltiptext copy">Inherit</span>
+                        </button>
+                    </div>
+                    <input type="text" id="import2" value="./" placeholder="erc721">
+                    <input type="text" id="import3" value="./" placeholder="erc20">
+                </div>
+                <div class="selection-div" id="nameFunction">
+                    <div class="title-selection-div">Name.</div>
+                    <input type="text" id="inputCname" value="contratHolder">
                 </div>
                 <div class="selection-div" id="mutability">
                     <div class="title-selection-div">Mutability.</div>
-                    <button class="b-btn" id="pure">
+                    <button class="c-btn" id="pure">
                         Pure
                         <span class="tooltiptext">
                             Pure function declares that no state variable will be changed or read.
                         </span>
                     </button>
-                    <button class="b-btn" id="view">
+                    <button class="c-btn" id="view">
                         View
                         <span class="tooltiptext">
                             View functions are read-only functions. They do not modify the state of the blockchain.
                         </span></button>
-                    <button class="b-btn" id="payable">
+                    <button class="c-btn" id="payable">
                         Payable
                         <span class="tooltiptext">
                             Payable means that the function can receive Ether via that function call.
                         </span></button></button>
-                    <button class="b-btn none" id="">None</button>
-                </div>
-                <div class="selection-div" id="return">
-                    <div class="title-selection-div">Returns.</div>
-                    <input type="text" id="returns1" placeholder="int returns1">
-                    <input type="text" id="returns2" placeholder="int returns2">
-                    <input type="text" id="returns3" placeholder="int returns3">
+                    <button class="c-btn selected" id="">None</button>
                 </div>
             </div>
             <div class="answer-line">
-                <span class="answer-return" style="width: 100%; margin-right: 10px;" value="function _generateRandomDna(string memory _str) private view returns (uint) {}" id="answerToCopy">ddd</span>
-                <button class="answer-copy-btn" onclick="functionCopy('answerToCopy')">
+                <span class="answer-return" style="width: 100%; margin-right: 10px;" value="function _generateRandomDna(string memory _str) private view returns (uint) {}" id="contractToCopy">loading...</span>
+                <button class="answer-copy-btn" onclick="functionCopy('contractToCopy')">
                     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20"><path fill="currentColor" d="M8 3a1 1 0 0 0-1 1v.5a.5.5 0 0 1-1 0V4a2 2 0 0 1 2-2h.5a.5.5 0 0 1 0 1H8Zm-1 9a1 1 0 0 0 1 1h.5a.5.5 0 0 1 0 1H8a2 2 0 0 1-2-2v-.5a.5.5 0 0 1 1 0v.5Zm0-5.5a.5.5 0 0 0-1 0v3a.5.5 0 0 0 1 0v-3ZM16 3a1 1 0 0 1 1 1v.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2h-.5a.5.5 0 0 0 0 1h.5Zm0 10a1 1 0 0 0 1-1v-.5a.5.5 0 0 1 1 0v.5a2 2 0 0 1-2 2h-.5a.5.5 0 0 1 0-1h.5Zm1.5-7a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 1 0v-3a.5.5 0 0 0-.5-.5Zm-7-4a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3ZM10 13.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5ZM4 6h1v6.5A2.5 2.5 0 0 0 7.5 15H14v1a2 2 0 0 1-2 2H5.5A3.5 3.5 0 0 1 2 14.5V8a2 2 0 0 1 2-2Z"/></svg>
                     <span class="tooltiptext copy">Copy text.</span>
-                <span class="tooltiptext copied">Text copied.</span>
+                    <span class="tooltiptext copied">Text copied.</span>
                 </button>
             </div>
         </div>

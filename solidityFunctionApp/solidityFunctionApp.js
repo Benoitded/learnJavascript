@@ -9,9 +9,9 @@ function functionCopy(elementID) {
     navigator.clipboard.writeText(elementText); //use the copyText function below
 }
 
-//Get data from parameters and update the output
-function updateInfo() {
-    console.log("Go in updateInfo()");
+//Get data from parameters and update the output function
+function updateFunction() {
+    console.log("Go in updateFunction()");
     //Underscore
     if (visibility == "internal" || visibility == "external") { underscore = "_"; } else { underscore = " " }
     //Name
@@ -43,7 +43,49 @@ function updateInfo() {
     //console.log("++> " + answer);
     $("#answerToCopy").html(answer);
 }
-document.querySelector('input').addEventListener('input', updateInfo);
+
+//Get data from parameters and update the output contract
+function updateContract() {
+    console.log("Go in updateContract()");
+    let cartBack = "<br>" + String.fromCharCode(0x0A);
+    let answerContract = "";
+    let importsArray = [];
+    let imports = "";
+    const SIZE_IMPORT = 3;
+    //Pragma
+    old = "&#62;=<span style='color: #7d956f;'>0.5.0</span> &#60;<span style='color: #7d956f;'>=0.5.0</span>"
+    answerContract = "<span style='color: #dd4e01;' value='pragm'>pragma solidity</span> " + document.getElementById("pragma-name").value + ";" + cartBack + cartBack;
+    //Import
+    for (let i = 1; i < SIZE_IMPORT + 1; i++) {
+        str = "import" + i;
+        val = document.getElementById(str).value;
+        if ((val == "./") || (val == "")) {
+            importsArray[i] = "";
+            console.log(i + " - C'est vide.");
+        } else {
+            importsArray[i] = val;
+            imports += "<span style='color: #dd4e01;'>import</span> \"" + val + '";' + cartBack;
+        }
+        console.log(i + " - " + val);
+    }
+
+    if (imports != "") imports += cartBack;
+
+    answerContract += imports;
+    //imports = "import " + document.getElementById("import1").value; + ";"
+    //Name
+    nameContract = document.getElementById("inputCname").value;
+    console.log("name -> " + nameContract);
+    //Contract
+    answerContract += "<span style='color: #dd4e01;' value='pragm'>contract</span> " + nameContract + " {}";
+    //answerContract = "<span style='color: #1f67db;'>function</span> <span style='color: #dd4e01;'>" + underscore + name + "</span> (<span style='color: #269000;'>" + parameters + "</span>) " + inheriting + visibility + mutability + returns + "{}";
+    //answerContract = "Salut lem" + cartBack + "contracst";
+    //console.log("++> " + answer);
+    $("#contractToCopy").html(answerContract);
+}
+
+
+document.querySelector('input').addEventListener('input', updateContract);
 
 $(document).ready(function() {
     let id = "nothing";
@@ -60,16 +102,30 @@ $(document).ready(function() {
     let returns3 = "";
     let returns = "";
     let answer = "";
-    updateInfo()
+    var path = window.location.pathname;
+    var page = path.split("/").pop();
+    console.log(page);
+    if (page == "solidityFunctionApp.html") updateFunction();
+    if (page == "solidityContractApp.html") updateContract();
+    //updateFunction();
+    //updateContract();
 
 
     //Highlight button clicked for each row
     $(".b-btn").on("click", function() {
         parent = $(this).parent().attr('id'); //Get the ID from the parent
         eval(parent + ' = $(this).attr("id") + " "'); //Sent the ID of the button to the variable (named the same)
-        $("#" + parent + " > button").removeClass("none"); //Remove all "none" class to all button (from parent ID to child button)
-        $(this).addClass("none"); //Add class to the one button clicked
-        updateInfo(); //Call the function
+        $("#" + parent + " > button").removeClass("selected"); //Remove all "selected" class to all button (from parent ID to child button)
+        $(this).addClass("selected"); //Add class to the one button clicked
+        updateFunction(); //Call the function
+    });
+    //Highlight button clicked for each row
+    $(".c-btn").on("click", function() {
+        parent = $(this).parent().attr('id'); //Get the ID from the parent
+        eval(parent + ' = $(this).attr("id") + " "'); //Sent the ID of the button to the variable (named the same)
+        $("#" + parent + " > button").removeClass("selected"); //Remove all "selected" class to all button (from parent ID to child button)
+        $(this).addClass("selected"); //Add class to the one button clicked
+        updateContract(); //Call the function
     });
 
 });
