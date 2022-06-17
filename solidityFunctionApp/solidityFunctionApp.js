@@ -1,6 +1,7 @@
 let inheriting = "";
 let visibility = "";
 let mutability = "";
+let lastClicID = ">0.5.0 <=0.5.0";
 
 //Copy the output text into the clipboard
 function functionCopy(elementID) {
@@ -51,22 +52,33 @@ function updateContract() {
     let answerContract = "";
     let importsArray = [];
     let imports = "";
+    let pragma = "";
     const SIZE_IMPORT = 3;
     //Pragma
-    old = "&#62;=<span style='color: #7d956f;'>0.5.0</span> &#60;<span style='color: #7d956f;'>=0.5.0</span>"
-    answerContract = "<span style='color: #dd4e01;' value='pragm'>pragma solidity</span> " + document.getElementById("pragma-name").value + ";" + cartBack + cartBack;
+    pragma = "&#62;=<span style='color: #7d956f;'>0.5.0</span> &#60;<span style='color: #7d956f;'>=0.5.0</span>"
+
+    const elem = document.getElementById("pragma-name");
+
+    if (elem === document.activeElement) {
+        console.log('Element has focus!');
+        pragma = elem.value;
+    } else {
+        console.log('Element has not focus! ' + lastClicID);
+        pragma = lastClicID;
+    }
+
+    //pragma = document.getElementById("pragma-name").value;
+    answerContract = "<span style='color: #dd4e01;' value='pragm'>pragma solidity</span> " + pragma + ";" + cartBack + cartBack;
     //Import
     for (let i = 1; i < SIZE_IMPORT + 1; i++) {
         str = "import" + i;
         val = document.getElementById(str).value;
         if ((val == "./") || (val == "")) {
             importsArray[i] = "";
-            console.log(i + " - C'est vide.");
         } else {
             importsArray[i] = val;
             imports += "<span style='color: #dd4e01;'>import</span> \"" + val + '";' + cartBack;
         }
-        console.log(i + " - " + val);
     }
 
     if (imports != "") imports += cartBack;
@@ -121,6 +133,7 @@ $(document).ready(function() {
     });
     //Highlight button clicked for each row
     $(".c-btn").on("click", function() {
+        lastClicID = $(this).attr('id');
         parent = $(this).parent().attr('id'); //Get the ID from the parent
         eval(parent + ' = $(this).attr("id") + " "'); //Sent the ID of the button to the variable (named the same)
         $("#" + parent + " > button").removeClass("selected"); //Remove all "selected" class to all button (from parent ID to child button)

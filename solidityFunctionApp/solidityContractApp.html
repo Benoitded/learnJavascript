@@ -20,13 +20,13 @@
                 - _ for internal and private functions-->
                 <div class="selection-div" id="nameFunction">
                     <div class="title-selection-div">Version.</div>
-                    <button class="c-btn selected" id="old">
+                    <button class="c-btn selected" id=">0.5.0 <=0.5.0">
                         &#62;0.5.0 &#60;=0.5.0
                         <span class="tooltiptext">
                             Internal functions and state variables can only be accessed internally (i.e. from within the current contract or contracts deriving from it), without using this.
                         </span>
                     </button>
-                    <button class="c-btn" id="new">
+                    <button class="c-btn" id="^0.6.7">
                         ^0.6.7
                         <span class="tooltiptext">
                             Internal functions and state variables can only be accessed internally (i.e. from within the current contract or contracts deriving from it), without using this.
@@ -43,32 +43,16 @@
                             <span class="tooltiptext copy">Inherit</span>
                         </button>
                     </div>
+                    <div class="import-line">
+                        <input type="text" id="import2" value="./" placeholder="erc721">
+                        <input type="checkbox" checked="checked">
+                    </div>
                     <input type="text" id="import2" value="./" placeholder="erc721">
                     <input type="text" id="import3" value="./" placeholder="erc20">
                 </div>
                 <div class="selection-div" id="nameFunction">
                     <div class="title-selection-div">Name.</div>
                     <input type="text" id="inputCname" value="contratHolder">
-                </div>
-                <div class="selection-div" id="mutability">
-                    <div class="title-selection-div">Mutability.</div>
-                    <button class="c-btn" id="pure">
-                        Pure
-                        <span class="tooltiptext">
-                            Pure function declares that no state variable will be changed or read.
-                        </span>
-                    </button>
-                    <button class="c-btn" id="view">
-                        View
-                        <span class="tooltiptext">
-                            View functions are read-only functions. They do not modify the state of the blockchain.
-                        </span></button>
-                    <button class="c-btn" id="payable">
-                        Payable
-                        <span class="tooltiptext">
-                            Payable means that the function can receive Ether via that function call.
-                        </span></button></button>
-                    <button class="c-btn selected" id="">None</button>
                 </div>
             </div>
             <div class="answer-line">
