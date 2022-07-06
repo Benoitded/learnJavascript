@@ -14,6 +14,7 @@ body {
 
 img {
     max-height: 100px;
+    max-width: 100%;
 }
 
 label {
@@ -85,7 +86,24 @@ input {
     cursor: pointer;
     border-radius: 10px;
     border: 2px dashed #535353;
+    overflow: hidden;
     background-color: rgba(196, 196, 196, 0.079);
+}
+
+.styleSVG {
+    width: auto;
+    height: auto;
+}
+
+.divImage {
+    width: 100%;
+    height: auto;
+}
+
+.previewImage {
+    width: 100%;
+    max-height: none;
+    transform: translateY(-50%);
 }
 
 textarea {
@@ -122,11 +140,11 @@ textarea {
     flex-direction: column;
     border-radius: 10px;
     border: 2px solid;
-    width: 825px;
+    width: 840px;
 }
 
 .save-header {
-    padding: 20px;
+    padding: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
@@ -158,6 +176,8 @@ textarea {
 
 .last-param {
     border: none;
+    display: flex;
+    justify-content: center;
 }
 
 

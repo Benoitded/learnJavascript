@@ -19,7 +19,7 @@
                 <div class="add-column">
                     <div class="param-div">
                         <div class="param-header">Title</div>
-                        <input type="text" id="title" name="Title" placeholder="La belle au bois dormant">
+                        <input type="text" id="title" name="Title" autofocus placeholder="La belle au bois dormant">
                     </div>
                     <div class="param-div">
                         <div class="param-header">Author</div>
@@ -36,18 +36,22 @@
                         <input type="text" id="publishing" name="Author" placeholder="Charles Perrault">
                     </div>
                     <div class="param-div">
-                        <div class="param-header">ISBN number</div>
+                        <div class="param-header">ISBN number<i>(optional)</i></div>
                         <input type="text" id="isbn" name="Author" placeholder="2010017560">
                     </div>
                     <div class="param-div">
                         <div class="param-header">Add a cover</div>
-                        <label for="inputTag">
-                        <input style="display: none;" id="cover" type="file"/>
-                        <div class="svg-image">
-                            <svg style="width: auto; height:auto;" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M21 6h-3.17L16 4h-6v2h5.12l1.83 2H21v12H5v-9H3v9c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM8 14c0 2.76 2.24 5 5 5s5-2.24 5-5s-2.24-5-5-5s-5 2.24-5 5zm5-3c1.65 0 3 1.35 3 3s-1.35 3-3 3s-3-1.35-3-3s1.35-3 3-3zM5 6h3V4H5V1H3v3H0v2h3v3h2z"/></svg>
-                        </div>
-                        <span id="imageName"></span>
-                      </label>
+                        <label for="cover">
+                            <input style="display: none;" id="cover" type="file" onchange="readURL(this);" />
+                            <div class="svg-image">
+                                <!--<img class="previewImage" src="#" alt="your image" />-->
+                                <div class="divImage">
+                                    <img class="previewImage" src="#" alt="Picture">
+                                </div>
+                                <svg class="styleSVG" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M21 6h-3.17L16 4h-6v2h5.12l1.83 2H21v12H5v-9H3v9c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM8 14c0 2.76 2.24 5 5 5s5-2.24 5-5s-2.24-5-5-5s-5 2.24-5 5zm5-3c1.65 0 3 1.35 3 3s-1.35 3-3 3s-3-1.35-3-3s1.35-3 3-3zM5 6h3V4H5V1H3v3H0v2h3v3h2z"/></svg>
+                            </div>
+                            <span id="imageName"></span>
+                        </label>
                     </div>
                 </div>
                 <div class="add-column">
