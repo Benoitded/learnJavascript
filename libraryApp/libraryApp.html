@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
-    <title>default</title>
+    <title>libraryApp</title>
+    <link rel="icon" type="image/png" href="Assets/books.png">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
-    <link href="default.css" rel="stylesheet" type="text/css">
+    <link href="libraryApp.css" rel="stylesheet" type="text/css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 </head>
@@ -14,11 +15,73 @@
 <body>
     <section class="main-section">
         <div class="main-div">
+            <div class="add-div">
+                <div class="add-column">
+                    <div class="param-div" id="div-title">
+                        <div class="param-header">Title</div>
+                        <input type="text" id="title" name="Title" placeholder="La belle au bois dormant">
+                    </div>
+                    <div class="param-div" id="div-author">
+                        <div class="param-header">Author</div>
+                        <input type="textarea" id="author" name="Author" placeholder="Charles Perrault">
+                    </div>
+                    <div class="param-div" id="div-data">
+                        <div class="param-header">Date of paruption</div>
+                        <input type="date">
+                    </div>
+                </div>
+                <div class="add-column">
+                    <div class="param-div" id="div-publishing">
+                        <div class="param-header">Publishing house</div>
+                        <input type="textarea" id="author" name="Author" placeholder="Charles Perrault">
+                    </div>
+                    <div class="param-div" id="div-isbn">
+                        <div class="param-header">ISBN number</div>
+                        <input type="textarea" id="author" name="Author" placeholder="2010017560">
+                    </div>
+                    <div class="param-div" id="div-image">
+                        <div class="param-header">Add a cover</div>
+                        <input type="file" style="display: flex;" id="fileElem" accept="image/*" title="">
+                    </div>
+                </div>
+                <div class="add-column">
+                    <div class="param-div" id="div-description">
+                        <div class="param-header">Description</div>
+                        <textarea name="Description" id="" cols="30" rows="7" placeholder="La belle au bois dormant is a classic fairy tale about a princess who is cursed to sleep for a hundred years..."></textarea>
+                    </div>
+                </div>
+                <div class="add-column">
+                    <input type="submit" value="Add a book.">
+                </div>
+            </div>
+            <div class="save-div">
+                <div class="save-header">
+                    <div class="save-param-header">Title</div>
+                    <div class="save-param-header">Author</div>
+                    <div class="save-param-header">Date</div>
+                    <div class="save-param-header">Publishing house</div>
+                    <div class="save-param-header last-param">Cover</div>
+                </div>
+                <div class="save-content">
+                    <div class="save-param-content">Les 101 Dalmatiens</div>
+                    <div class="save-param-content">Dodie Smith</div>
+                    <div class="save-param-content">1959</div>
+                    <div class="save-param-content">Heinemann</div>
+                    <div class="save-param-content last-param">Photo à mettre</div>
+                </div>
+                <div class="save-content">
+                    <div class="save-param-content">Les Aventures de Pinocchio</div>
+                    <div class="save-param-content">Carlo Collodi</div>
+                    <div class="save-param-content">1881</div>
+                    <div class="save-param-content">El editor</div>
+                    <div class="save-param-content last-param">Photo à mettre</div>
+                </div>
+            </div>
         </div>
         <footer>Made with ❤ by <a class="benoitded" href="https://github.com/Benoitded" target="_blank">Benoitded</a></footer>
     </section>
 
-    <script src="default.js"></script>
+    <script src="libraryApp.js"></script>
 </body>
 
 </html>

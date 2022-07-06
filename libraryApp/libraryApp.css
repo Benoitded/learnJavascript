@@ -13,8 +13,7 @@ body {
 }
 
 .main-div {
-    height: 200px;
-    width: 700px;
+    /*width: 800px;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,6 +24,86 @@ body {
     padding: 30px;
     position: relative;
 }
+
+.add-div {
+    display: flex;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px dashed;
+    margin-bottom: 25px;
+}
+
+.add-column {
+    margin: 5px;
+    max-width: 100%;
+}
+
+.param-div {
+    margin: 10px 0px;
+}
+
+.param-header {
+    color: #535353;
+    font-size: 14px;
+}
+
+input {
+    border-radius: 5px;
+    border: none;
+    height: 20px;
+}
+
+textarea {
+    resize: none;
+    height: 100%;
+    border-radius: 5px;
+    border: none;
+}
+
+.save-div {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 2px solid;
+    width: 825px;
+}
+
+.save-header {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.save-param-header {
+    display: inline-grid;
+    justify-content: center;
+    max-width: 100%;
+    border-right: 1px solid #535353;
+}
+
+.save-content {
+    margin: 0 0px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    background-color: #161616;
+    border-radius: 15px;
+}
+
+.save-param-content {
+    display: inline-grid;
+    justify-content: left;
+    max-width: 100%;
+    border-right: 1px solid #535353;
+    padding: 0 10px;
+}
+
+.last-param {
+    border: none;
+}
+
+
+/*Footer*/
 
 footer {
     position: fixed;
