@@ -12,6 +12,22 @@ body {
     position: relative;
 }
 
+img {
+    max-height: 100px;
+}
+
+label {
+    color: #535353;
+    font-size: 14px;
+}
+
+input {
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+    width: 100%;
+}
+
 .main-div {
     /*width: 800px;*/
     display: flex;
@@ -25,12 +41,18 @@ body {
     position: relative;
 }
 
+
+/*Add*/
+
 .add-div {
-    display: flex;
+    display: grid;
+    width: 800px;
     padding: 20px;
     border-radius: 10px;
     border: 2px dashed;
     margin-bottom: 25px;
+    grid-template-columns: 1fr 1fr 1.3fr 0.2fr;
+    gap: 10px;
 }
 
 .add-column {
@@ -39,7 +61,7 @@ body {
 }
 
 .param-div {
-    margin: 10px 0px;
+    margin: 5px 0px;
 }
 
 .param-header {
@@ -47,18 +69,53 @@ body {
     font-size: 14px;
 }
 
-input {
-    border-radius: 5px;
-    border: none;
-    height: 20px;
+.add-image {}
+
+.add-image:hover {
+    background-color: #959595;
+    border: 2px dashed #ffffff;
+}
+
+.svg-image {
+    color: #e4e7eb;
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: 28px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px dashed #535353;
+    background-color: rgba(196, 196, 196, 0.079);
 }
 
 textarea {
     resize: none;
-    height: 100%;
+    height: 132px;
+    width: 100%;
     border-radius: 5px;
     border: none;
 }
+
+.submit-btn {
+    margin-top: 15px;
+    height: 136px;
+    background-color: #535353;
+    cursor: pointer;
+    border: 2px solid rgba(0, 0, 0, 0);
+}
+
+.submit-btn:hover {
+    background-color: #959595;
+    border: 2px solid #ffffff;
+}
+
+.submit-btn:active {
+    background-color: #535353;
+    transition: 0.1s;
+}
+
+
+/*Save*/
 
 .save-div {
     display: flex;
@@ -77,17 +134,18 @@ textarea {
 .save-param-header {
     display: inline-grid;
     justify-content: center;
-    max-width: 100%;
+    width: 100%;
     border-right: 1px solid #535353;
 }
 
-.save-content {
-    margin: 0 0px;
+.save-line {
+    margin: 0px 0px;
     padding: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     background-color: #161616;
     border-radius: 15px;
+    border-top: 1px solid #535353;
 }
 
 .save-param-content {
