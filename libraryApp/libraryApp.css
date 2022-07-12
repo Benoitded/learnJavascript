@@ -90,6 +90,11 @@ input {
     background-color: rgba(196, 196, 196, 0.079);
 }
 
+.svg-image:hover {
+    border: 2px dashed #858585;
+    background-color: rgba(196, 196, 196, 0.247);
+}
+
 .styleSVG {
     width: auto;
     height: auto;
@@ -122,14 +127,20 @@ textarea {
     border: 2px solid rgba(0, 0, 0, 0);
 }
 
-.submit-btn:hover {
-    background-color: #959595;
-    border: 2px solid #ffffff;
-}
+.submit-btn:hover {}
 
 .submit-btn:active {
     background-color: #535353;
     transition: 0.1s;
+}
+
+.canSubmit {
+    border: 2px solid #6bdc69;
+}
+
+.canSubmit:hover {
+    background-color: #959595;
+    border: 2px solid #ffffff;
 }
 
 
@@ -162,8 +173,12 @@ textarea {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     background-color: #161616;
-    border-radius: 15px;
     border-top: 1px solid #535353;
+    position: relative;
+}
+
+.save-line:hover {
+    background-color: #2e2e2e;
 }
 
 .save-param-content {

@@ -18,6 +18,29 @@ function readURL(input) {
     }
 }
 
+function checkValide() {
+    console.log("Valide");
+}
+
+//document.querySelectorAll('input').forEach().addEventListener('input', checkValide);
+
+let elementsArray = document.querySelectorAll(".param-div");
+
+elementsArray.forEach(function(elem) {
+    elem.addEventListener("input", function() {
+        if (document.getElementById("title").value &&
+            document.getElementById("author").value &&
+            document.getElementById("date").value &&
+            document.getElementById("publishing").value &&
+            document.getElementById("description").value &&
+            savedImage) {
+            $(".submit-btn").addClass("canSubmit"); //Add green borders to submit button
+        } else {
+            $(".submit-btn").removeClass("canSubmit"); //Remove green borders to submit button
+        }
+    });
+});
+
 $(document).ready(function() {
     let i = 0;
     $(".divImage").hide();
@@ -33,11 +56,10 @@ $(document).ready(function() {
         if (!author) alertMessage += "\r\nAuthor missing";
         if (!date) alertMessage += "\r\nDate missing";
         if (!publishing) alertMessage += "\r\nPublishing house missing";
-        if (!isbn) alertMessage += "\r\nISBN number missing";
         if (!savedImage) alertMessage += "\r\nCover image missing";
         if (!description) alertMessage += "\r\nDescription missing";
 
-        if (!(title && author && date && publishing && isbn && savedImage && description))
+        if (!(title && author && date && publishing && savedImage && description))
         //if (0)
             alert(alertMessage);
         else {
