@@ -5,8 +5,8 @@ body {
 }
 
 .main-section {
+    margin-top: 50px;
     display: flex;
-    height: 95vh;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -42,6 +42,10 @@ input {
     position: relative;
 }
 
+::placeholder {
+    opacity: 0.4;
+}
+
 
 /*Add*/
 
@@ -57,7 +61,7 @@ input {
 }
 
 .add-column {
-    margin: 5px;
+    margin: 10px;
     max-width: 100%;
 }
 
@@ -66,7 +70,7 @@ input {
 }
 
 .param-header {
-    color: #535353;
+    color: #aeaeae;
     font-size: 14px;
 }
 
@@ -143,6 +147,11 @@ textarea {
     border: 2px solid #ffffff;
 }
 
+.redText {
+    color: #c92e2e;
+    /*background-color: #6bdc69;*/
+}
+
 
 /*Save*/
 
@@ -164,7 +173,6 @@ textarea {
     display: inline-grid;
     justify-content: center;
     width: 100%;
-    border-right: 1px solid #535353;
 }
 
 .save-line {
@@ -193,6 +201,85 @@ textarea {
     border: none;
     display: flex;
     justify-content: center;
+}
+
+
+/*Block*/
+
+.save-div-block {
+    border: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    max-width: 844px;
+}
+
+.save-header-block {
+    display: none;
+}
+
+.save-line-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #161616;
+}
+
+.save-line-block.next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #535353;
+}
+
+.save-line-block.next:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    cursor: pointer;
+}
+
+.block-desc-block {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.save-param-content-block {
+    border: none;
+    border-radius: 10px;
+    background-color: #242424;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+.save-param-content-block.photo {
+    width: 100%;
+    height: 200px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.save-param-content-block.title {
+    font-size: 22px;
+    background-color: #535353;
+    text-align: center;
+}
+
+.save-param-content-block.photo:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.save-param-content-block.photo img {
+    width: 100%;
+    max-height: none;
+    transform: translateY(-25%);
 }
 
 

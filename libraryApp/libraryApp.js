@@ -22,9 +22,15 @@ function checkValide() {
     console.log("Valide");
 }
 
+function focusFirst() {
+    document.getElementById("title").focus();
+    console.log("focus");
+}
+
 //document.querySelectorAll('input').forEach().addEventListener('input', checkValide);
 
 let elementsArray = document.querySelectorAll(".param-div");
+
 
 elementsArray.forEach(function(elem) {
     elem.addEventListener("input", function() {
@@ -42,24 +48,47 @@ elementsArray.forEach(function(elem) {
 });
 
 $(document).ready(function() {
-    let i = 0;
+    let i = 2;
     $(".divImage").hide();
+
+    let param = "title"
+        //let direction = "#" + param.parent() + "> div";
+        //alert(direction);
+        //$(direction).addClass("redText")
+
+    //$("#publishing:parent").addClass("redText");
+    //$('#publishing').parent().children(':first').addClass('redText');
+    //$('#cover').parent().parent().children(':first').addClass('redText');
+
     $(".submit-btn").on("click", function() {
         let alertMessage = "";
-        let title = document.getElementById("title").value;
-        let author = document.getElementById("author").value;
-        let date = document.getElementById("date").value;
-        let publishing = document.getElementById("publishing").value;
-        let isbn = document.getElementById("isbn").value;
-        let description = document.getElementById("description").value;
-        if (!title) alertMessage = "Title missing";
-        if (!author) alertMessage += "\r\nAuthor missing";
-        if (!date) alertMessage += "\r\nDate missing";
-        if (!publishing) alertMessage += "\r\nPublishing house missing";
-        if (!savedImage) alertMessage += "\r\nCover image missing";
-        if (!description) alertMessage += "\r\nDescription missing";
+        let alertMessageLine = "";
+        let parameters = [
+            { "name": "title", "value": "" },
+            { "name": "author", "value": "" },
+            { "name": "date", "value": "" },
+            { "name": "publishing", "value": "" },
+            { "name": "isbn", "value": "" },
+            { "name": "description", "value": "" }
+        ]
 
-        if (!(title && author && date && publishing && savedImage && description))
+        for (var j = 0; j < parameters.length; j++) {
+            parameters[j].value = document.getElementById(parameters[j].name).value;
+            if (!parameters[j].value && parameters[j].name != "isbn") {
+                alertMessage += parameters[j].name.charAt(0).toUpperCase() + parameters[j].name.slice(1) + " missing\r\n"; //Add line of error, with uppercase
+                $('#' + parameters[j].name).parent().children(':first').addClass('redText');
+            } else {
+                $('#' + parameters[j].name).parent().children(':first').removeClass('redText');
+            }
+        }
+        if (!savedImage) {
+            alertMessage += ("Cover missing\r\n");
+            $('#cover').parent().parent().children(':first').addClass('redText');
+        } else {
+            $('#cover').parent().parent().children(':first').removeClass('redText');
+        }
+
+        if (!(parameters[0].value && parameters[1].value && parameters[2].value && parameters[3].value && savedImage && parameters[5].value))
         //if (0)
             alert(alertMessage);
         else {
@@ -70,18 +99,27 @@ $(document).ready(function() {
             $("#publishing").val('');
             $("#isbn").val('');
             $("#description").val('');
-            $(".save-div").append('<div class="save-line" title="' + description + '\r\nISBN: ' + isbn + '"></div>');
-            $(".save-line").last().append('<div class="save-param-content">' + title + '</div>',
-                '<div class="save-param-content">' + author + '</div>',
-                '<div class="save-param-content">' + date + '</div>',
-                '<div class="save-param-content">' + publishing + '</div>',
-                '<div class="save-param-content last-param"><img class="toWrite" src="Assets/Pinocchio.jpg" alt="Picture of the book cover of Pinocchio"></div>');
+            $(".divImage").hide(); //Hide preview image in add a cover
+            $(".styleSVG").show(); //Show SVG in add a cover
+            $(".submit-btn").removeClass("canSubmit"); //Remove green borders to submit button
+
+            $(".next").before('<div class="save-line-block"></div>');
+            $(".save-line-block").eq(i).append(
+                '<div class="save-param-content-block photo" title="ISBN: ' + parameters[4].value + '"><img class="toWrite" src="Assets/Pinocchio.jpg" alt="Picture of the book cover of Pinocchio"></div>',
+                '<div class="save-param-content-block title" title="Title">' + parameters[0].value + '</div>',
+                '<div class="block-desc-block"></div>');
+            $(".block-desc-block").last().append(
+                '<div class="save-param-content-block" title="Author">' + parameters[1].value + '</div>',
+                '<div class="save-param-content-block" title="Date of paruption">' + parameters[2].value + '</div>',
+                '<div class="save-param-content-block" title="Publishing house">' + parameters[3].value + '</div>',
+                '<div class="save-param-content-block" title="Description">' + parameters[5].value + '</div>');
             i++;
             var reader = new FileReader();
             reader.onload = function(e) {
                 $('.toWrite').last().attr('src', e.target.result);
             };
             reader.readAsDataURL(savedImage.files[0]);
+            savedImage = 0; //delete image
         }
     });
 });
